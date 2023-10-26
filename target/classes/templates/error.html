@@ -1,0 +1,23 @@
+<!-- システムエラー画面 -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link th:href="@{/css/layout.css}" rel="stylesheet" />
+<title>システムエラー</title>
+</head>
+<body>
+	<!-- ヘッダー -->
+	<header th:include="layout/header :: head"></header>
+	<!-- サイドバー -->
+	<aside th:include="layout/aside :: side"></aside>
+	<!-- メイン -->
+	<h3>システムエラー画面</h3>
+		<p>システムエラーが発生しました。サイト管理者までご連絡ください。</p>
+	</form>
+	<!-- フッダー -->
+	<footer th:include="layout/footer :: foot"></footer>
+</body>
+</html>

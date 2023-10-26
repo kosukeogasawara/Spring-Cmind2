@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link th:href="@{/css/layout.css}" rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ヘッダー -->
+	<header th:include="layout/header :: head"></header>
+	<div class="content">
+		<div class="login">
+			<h3>ログイン画面</h3>
+			<div class="form">
+
+				<form th:action="@{/top}" method="post" th:object="${loginForm}">
+
+					<div class="login_label">社員番号</div>
+					<div class="login_input">
+						<input type="text" th:field="*{empId}" />
+					</div>
+
+					<div class="login_label">パスワード</div>
+					<div class="login_input">
+						<input type="password" th:field="*{password}" />
+					</div>
+
+					<div class="login_label"></div>
+					<div class="login_input">
+						<input type="submit" value="ログイン" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- フッダー -->
+	<footer th:include="layout/footer :: foot"></footer>
+</body>
+</html>

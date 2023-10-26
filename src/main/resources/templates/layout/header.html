@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<header class="content" th:fragment="head">
+		<div class="title">社員管理システム</div>
+		<div th:if="${session.empName}">
+			<div class="user_info">ログインユーザー：<span th:text="${session.empName}"></span></div>
+		</div>
+	</header>
+</body>
+</html>

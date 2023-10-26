@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link th:href="@{/css/layout.css}" rel="stylesheet" />
+<title>社員一覧画面</title>
+</head>
+<body>
+	<!-- ヘッダー -->
+	<header th:include="layout/header :: head"></header>
+	<!-- サイドバー -->
+	<aside th:include="layout/aside :: side"></aside>
+	<!-- メイン -->
+	<article class="main">
+		<h3 class="page_title">社員一覧画面</h3>
+		<th:block th:text="${loginForm.empId}"></th:block>
+	</article>
+	<!-- フッダー -->
+	<footer th:include="layout/footer :: foot"></footer>
+
+</body>
+</html>

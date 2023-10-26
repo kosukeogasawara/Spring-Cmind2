@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        /* スタイルの定義 */
+        .title {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <aside th:fragment="side">
+        <div class="title">
+            <a th:href="@{/mypage}">マイページ</a>
+        </div>
+        <div class="title">
+            <a th:href="@{/employee}">社員一覧</a>
+        </div>
+        <div class="title">
+            <a th:href="@{/logout}">ログアウト</a>
+        </div>
+    </aside>
+</body>
+</html>

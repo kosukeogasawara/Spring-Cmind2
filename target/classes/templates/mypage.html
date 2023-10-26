@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link th:href="@{/css/layout.css}" rel="stylesheet" />
+    <title>マイページ</title>
+</head>
+<body>
+	<!-- ヘッダー -->
+	<header th:include="layout/header :: head"></header>
+	<!-- サイドバー -->
+	<aside th:include="layout/aside :: side"></aside>
+	<!-- メイン -->
+        <div class="content">
+			<div class="mypage">
+				<h3>マイページ変更・確認 画面</h3>
+				<article_second th:include="layout/articlesecond :: second"></article_second>
+				<div class="form">
+					<form th:action="@{/complete}" method="post" th:object="${employee}">
+
+						<div class="label">社員番号</div>
+						<div class="input">
+							<input type="text" th:field="*{empId}" />
+						</div>
+
+						<div class="label">名前</div>
+						<div class="input">
+							<input type="text" th:field="*{empName}" />
+						</div>
+					
+						<div class="label">パスワード</div>
+						<div class="input">
+							<input type="password" th:field="*{password}" />
+						</div>
+						
+						<div class="label">生年月日</div>
+						<div class="input">
+							<input type="text" th:field="*{birthday}" />
+						</div>
+						
+						<div class="label">性別</div>
+						<div class="input">
+							<input type="radio" th:field="*{gender}" value="1"/>男性
+							<input type="radio" th:field="*{gender}" value="2"/>女性
+						</div>
+	
+						<div class="label"></div>
+						<div class="input">
+							<input type="submit" value="変更確定" />
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>      
+    <!-- フッダー -->
+	<footer th:include="layout/footer :: foot"></footer>
+</body>
+</html>

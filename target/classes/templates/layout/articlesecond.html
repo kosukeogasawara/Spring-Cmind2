@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<article th:fragment="second">
+		<div class="article_second">
+			<div th:if="${#fields.hasErrors('employee.empName')}" th:errors="*{employee.empName}"></div>
+			<div th:if="${#fields.hasErrors('employee.password')}" th:errors="*{employee.password}"></div>
+			<div th:if="${#fields.hasErrors('employee.birthday')}" th:errors="*{employee.birthday}"></div>
+		</div>
+	</article>
+</body>
+</html>

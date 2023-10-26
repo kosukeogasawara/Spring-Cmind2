@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link th:href="@{/css/layout.css}" rel="stylesheet" />
+	<title>社員一覧</title>
+</head>
+<body>
+	<!-- ヘッダー -->
+	<header th:include="layout/header :: head"></header>
+	<!-- サイドバー -->
+	<aside th:include="layout/aside :: side"></aside>
+	<!-- メイン -->
+	<article class="main">
+		<h3>社員一覧画面</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>社員番号</th>
+						<th>名前</th>
+						<th>生年月日</th>
+						<th>性別</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="employee : ${employeelist}">
+						<td th:text="${employee.empId}"></td>
+						<td th:text="${employee.empName}"></td>
+						<td th:text="${#dates.format(employee.birthday, 'yyyy-MM-dd')}"></td>
+						<td th:text="${employee.gender}"></td>
+					</tr>
+				</tbody>
+			</table>
+	</article>
+	<!-- フッダー -->
+	<footer th:include="layout/footer :: foot"></footer>
+
+</body>
+</html>

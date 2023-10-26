@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<article th:fragment="main">
+		<div class="article">
+			<div th:if="${#fields.hasErrors('loginForm.empId')}" th:errors="*{loginForm.empId}"></div>
+            <div th:if="${#fields.hasErrors('loginForm.password')}" th:errors="*{loginForm.password}"></div>
+            <div th:text="${errorMessage}"></div>
+		</div>
+	</article>
+</body>
+</html>

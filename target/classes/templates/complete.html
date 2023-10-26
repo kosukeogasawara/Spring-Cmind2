@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link th:href="@{/css/layout.css}" rel="stylesheet" />
+<title>変更完了</title>
+</head>
+<body>
+	<!-- ヘッダー -->
+	<header th:include="layout/header :: head"></header>
+	<!-- サイドバー -->
+	<aside th:include="layout/aside :: side"></aside>
+	<!-- メイン -->
+	<form th:action="@{/mypage}" method="post">
+		
+		<h3>マイページ変更完了画面</h3>
+			<p>会員情報変更が完了しました。</p>
+			<div class="label"></div>
+				<div class="input">
+					<input type="submit" value="戻る" />
+				</div>
+	</form>			
+<!-- フッダー -->
+<footer th:include="layout/footer :: foot"></footer>
+</body>
+</html>
